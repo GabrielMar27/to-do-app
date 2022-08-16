@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+input {
+  margin: 10px;
+  width: 500px;
+}
+#enterTaskContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#taskContainer {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  --angle: 0deg;
+  width: 719px;
+  border: 1px solid;
+  padding: 10px;
+  border-image: linear-gradient(
+      var(--angle),
+      rgb(255, 255, 255),
+      rgb(0, 0, 0),
+      rgb(255, 255, 255),
+      rgb(0, 0, 0)
+    )
+    1;
+  animation: 5s rotate linear infinite;
+}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.confirm {
+  width: 100px;
+  border: 0px solid transparent;
+  border-radius: 5px;
+  background-color: #46c351;
+  color: white;
+  font-size: 16px;
+}
+#removeAll {
+  width: 100px;
+  border: 0px solid transparent;
+  border-radius: 5px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 16px;
+}
