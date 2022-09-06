@@ -18,7 +18,7 @@ class Task {
     taskContainer.appendChild(addTask);
     addTask.appendChild(confirm);
     confirm.addEventListener("click", () => {
-      if (prompt("write yes to confirm and no to abort") === "yes") {
+      if (prompt("write yes to confirm") === "yes") {
         alert("task completed");
         addTask.remove();
       }
@@ -47,10 +47,7 @@ removeAll.addEventListener("click", () => {
   if (!taskContainer.firstChild) {
     alert("no task to delete");
   } else {
-    if (
-      prompt("write yes to confirm and no to abort to deleting all tasks") ===
-      "yes"
-    ) {
+    if (prompt("write yes to confirm") === "yes") {
       alert("tasks deleted");
       while (taskContainer.firstChild) {
         taskContainer.removeChild(taskContainer.firstChild);
