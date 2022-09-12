@@ -1,3 +1,4 @@
+let numbOfTask = 0;
 class Task {
   constructor(task, numbOfTasks) {
     this.task = task;
@@ -17,10 +18,12 @@ class Task {
     //append the task to container
     taskContainer.appendChild(addTask);
     addTask.appendChild(confirm);
+    numbOfTask++;
     confirm.addEventListener("click", () => {
       if (prompt("write yes to confirm") === "yes") {
         alert("task completed");
         addTask.remove();
+        numbOfTask--;
       }
     });
   }
@@ -28,7 +31,7 @@ class Task {
 let taskContainer = document.querySelector("#taskContainer");
 let taskInput = document.querySelector("#taskInput");
 let removeAll = document.querySelector("#removeAll");
-let numbOfTask = 0;
+
 let tasks = document.querySelectorAll(".task");
 taskInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
@@ -38,7 +41,6 @@ taskInput.addEventListener("keypress", (e) => {
       const newTask = new Task(taskInput.value, numbOfTask);
       newTask.createTask();
       //reset the users input
-      numbOfTask++;
       taskInput.value = "";
     }
   }
@@ -49,6 +51,7 @@ removeAll.addEventListener("click", () => {
   } else {
     if (prompt("write yes to confirm") === "yes") {
       alert("tasks deleted");
+      numbOfTask = 0;
       while (taskContainer.firstChild) {
         taskContainer.removeChild(taskContainer.firstChild);
       }
