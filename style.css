@@ -20,6 +20,7 @@ input {
   flex-flow: column;
 }
 .task {
+  word-break: break-all;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,13 +50,13 @@ input {
   initial-value: 0deg;
   inherits: false;
 }
-.confirm {
-  width: 100px;
+#taskContainer i {
   border: 0px solid transparent;
   border-radius: 5px;
   background-color: #46c351;
   color: white;
   font-size: 16px;
+  padding: 5px;
 }
 #removeAll {
   width: 100px;

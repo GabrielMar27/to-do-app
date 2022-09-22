@@ -7,12 +7,13 @@ class Task {
 
   createTask() {
     const addTask = document.createElement("div");
-    const confirm = document.createElement("button");
+    const confirm = document.createElement("i");
     addTask.setAttribute("class", "task");
     addTask.setAttribute("id", "task" + this.numbOfTask);
     confirm.setAttribute("class", "confirm");
+    confirm.setAttribute("class", "fa fa-check");
     confirm.setAttribute("id", "confirm" + this.numbOfTask);
-    confirm.innerHTML = "complete";
+
     addTask.innerHTML = `${this.numbOfTask + 1}. ${this.task}`;
     addTask.value = this.task;
     //append the task to container
